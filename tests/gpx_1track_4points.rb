@@ -14,6 +14,7 @@ class GPXFileTest < Test::Unit::TestCase
     assert_equal("Track One, one segment, 4 points", gpx.tracks.first.desc)
     assert_equal(Time.parse("2014-02-20 08:42:59 UTC"), gpx.time)
     assert_equal(1349, gpx.tracks.first.segments.first.points.first.elevation)
+    assert_equal(91, gpx.tracks.first.segments.first.points.first.hr)
     assert_equal(6.934360396116972, gpx.tracks.first.segments.first.points.first.lon)
     assert_equal(46.03442206978798, gpx.tracks.first.segments.first.points.first.lat)
   end

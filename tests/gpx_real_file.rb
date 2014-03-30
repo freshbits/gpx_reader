@@ -11,6 +11,7 @@ class GPXRealFile < Test::Unit::TestCase
     assert_equal(1, gpx.tracks.size)
     assert_equal(1, gpx.tracks.first.segments.size)
     assert_equal(5424, gpx.tracks.first.segments.first.points.size)
+    assert_equal(116, gpx.tracks.first.segments.first.points.first.hr)
     assert_equal("15.76", sprintf('%.2f', gpx.tracks.first.distance))
   end
 

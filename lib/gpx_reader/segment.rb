@@ -35,6 +35,7 @@ module GPXReader
         # calculate distance
         @distance += haversine_distance(previous_pt, point) unless previous_pt.nil?
         previous_pt = point
+        puts points.size if @debug
       end
     end
 

@@ -26,18 +26,12 @@ module GPXReader
       # read the file containing the tracks
       # get the different information of the file
       # get the tracks
-      def initialize(file)
+      def initialize(file, debug=false)
+        @debug=debug
         if file.is_a?(File)
           @gpx=Nokogiri::XML(File.open(file))
         else
           @gpx=Nokogiri::XML(file)
-        end
-        @creator = @gpx.at_css("gpx")["creator"]
-        @time = Time.parse(@gpx.at_css("metadata time").text) rescue nil
-        @tracks = []
-        @gpx.css("trk").each do |trk|
-           trk = Track.new(trk)
-           @tracks << trk
         end
         # get name spaces
         ns = @gpx.collect_namespaces
@@ -45,6 +39,13 @@ module GPXReader
         @namespaces= {}
         ns.each_pair do |key, value|
           @namespaces[key.sub(/^xmlns:/, '')] = value
+        end
+        @creator = @gpx.at_css("gpx")["creator"]
+        @time = Time.parse(@gpx.at_css("metadata time").text) rescue nil
+        @tracks = []
+        @gpx.css("trk").each do |trk|
+           trk = Track.new(trk)
+           @tracks << trk
         end
       end
   end
