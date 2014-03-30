@@ -42,6 +42,7 @@ This gem has been written for my own needs, if you feel something is missing don
 
 
 ## TODO
+  - Need to fix bug perf when getting heartrate
   - list all the points directly from the track
   - calculate boundaries of the tracks/segments unless in the metadata
   - calculate elapsed time

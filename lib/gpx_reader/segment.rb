@@ -25,7 +25,6 @@ module GPXReader
     attr_accessor :points, :distance
 
     def initialize(segment)
-      total_pt=0
       @distance = 0
       @points = []
       previous_pt = nil
@@ -35,7 +34,7 @@ module GPXReader
         # calculate distance
         @distance += haversine_distance(previous_pt, point) unless previous_pt.nil?
         previous_pt = point
-        puts points.size if @debug
+        # puts @points.size if @points.size.modulo(100).zero?
       end
     end
 

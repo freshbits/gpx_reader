@@ -22,23 +22,15 @@
 #++
 module GPXReader
   class Gpx
-    attr_accessor :creator, :tracks, :boundaries, :lowest_point, :highest_point, :duration, :version, :time, :name, :namespaces
+    attr_accessor :creator, :tracks, :boundaries, :lowest_point, :highest_point, :duration, :version, :time, :name
       # read the file containing the tracks
       # get the different information of the file
       # get the tracks
-      def initialize(file, debug=false)
-        @debug=debug
+      def initialize(file)
         if file.is_a?(File)
           @gpx=Nokogiri::XML(File.open(file))
         else
           @gpx=Nokogiri::XML(file)
-        end
-        # get name spaces
-        ns = @gpx.collect_namespaces
-        # Strip the leading xmlns: from each namespace key, and store in a new hash
-        @namespaces= {}
-        ns.each_pair do |key, value|
-          @namespaces[key.sub(/^xmlns:/, '')] = value
         end
         @creator = @gpx.at_css("gpx")["creator"]
         @time = Time.parse(@gpx.at_css("metadata time").text) rescue nil
