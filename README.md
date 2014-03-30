@@ -1,4 +1,4 @@
-# Gpx
+# Gpx Reader
 
 gem to read a gpx file
 
@@ -32,6 +32,7 @@ Or install it yourself as:
   - for the track inside @gpx.tracks
     - track.name
     - track.desc
+    - track.segments
   - ...
 
 ## Notes
@@ -42,7 +43,7 @@ This gem has been written for my own needs, if you feel something is missing don
 
 ## TODO
   - list all the points directly from the track
-  - calcucate boundaries of the tracks/segments unless in the metadata
+  - calculate boundaries of the tracks/segments unless in the metadata
   - calculate elapsed time
   - write more tests
   - improve performance (currently very long to read a file with 5400 points, approx 16km, takes 25")
