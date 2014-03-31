@@ -22,12 +22,12 @@
 #++
 module GPXReader
   class Point
-    attr_accessor :lat, :lon, :elevation, :time, :hr, :p
+    attr_accessor :lat, :lon, :elevation, :time, :hr
 
     def initialize(point)
-      @lat = point["lat"].to_f rescue 0
-      @lon = point["lon"].to_f rescue 0
-      @elevation = point.at_css("ele").text.to_f rescue 0
+      @lat = point["lat"].to_f rescue nil
+      @lon = point["lon"].to_f rescue nil
+      @elevation = point.at_css("ele").text.to_f rescue nil
       @time = Time.parse(point.at_css("time").text) rescue nil
       @hr = point.at_xpath(".//gpxtpx:hr").text.to_i rescue nil
     end

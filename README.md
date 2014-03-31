@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-  gpx accept a file as argument or a string.
+  gpx_reader accept a file as argument or a string.
 
   To read a gpx file just call @gpx = GPXReader::Gpx.new(file) or @gpx = GPXReader::Gpx.new(string)
 
@@ -46,7 +46,6 @@ This gem has been written for my own needs, if you feel something is missing don
   - calculate boundaries of the tracks/segments unless in the metadata
   - calculate elapsed time
   - write more tests
-  - improve performance (currently very long to read a file with 5400 points, approx 16km, takes 25")
 
 ## Contributing
 
