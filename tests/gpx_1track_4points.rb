@@ -21,8 +21,14 @@ class GPXFileTest < Test::Unit::TestCase
     assert_equal(92, gpx.tracks.first.segments.first.points[1].hr)
     assert_equal(93, gpx.tracks.first.segments.first.points[2].hr)
     assert_equal(94, gpx.tracks.first.segments.first.points[3].hr)
-    assert_equal(6.934360396116972, gpx.tracks.first.segments.first.points.first.lon)
-    assert_equal(46.03442206978798, gpx.tracks.first.segments.first.points.first.lat)
+    assert_equal(6.934360396116972, gpx.tracks.first.segments.first.points[0].lon)
+    assert_equal(6.93439643830061, gpx.tracks.first.segments.first.points[1].lon)
+    assert_equal(6.934469779953361, gpx.tracks.first.segments.first.points[2].lon)
+    assert_equal(6.934554101899266, gpx.tracks.first.segments.first.points[3].lon)
+    assert_equal(46.03442206978798, gpx.tracks.first.segments.first.points[0].lat)
+    assert_equal(46.03444067761302, gpx.tracks.first.segments.first.points[1].lat)
+    assert_equal(46.03447579778731, gpx.tracks.first.segments.first.points[2].lat)
+    assert_equal(46.03450287133455, gpx.tracks.first.segments.first.points[3].lat)
   end
 
 
