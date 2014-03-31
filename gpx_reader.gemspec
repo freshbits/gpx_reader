@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["nicolas.aguttes@gmail.com"]
   spec.description   = %q{Gem to parse a gpx file or string}
   spec.summary       = %q{gpx reader}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tranquiliste/gpx_reader"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
