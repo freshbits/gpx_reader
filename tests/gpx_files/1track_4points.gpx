@@ -24,7 +24,7 @@
         </extensions>
       </trkpt>
       <trkpt lon="6.93439643830061" lat="46.03444067761302">
-        <ele>1350.5999755859375</ele>
+        <ele>1350</ele>
         <time>2014-02-20T08:43:00.000Z</time>
         <extensions>
           <gpxtpx:TrackPointExtension>
@@ -33,7 +33,7 @@
         </extensions>
       </trkpt>
       <trkpt lon="6.934469779953361" lat="46.03447579778731">
-        <ele>1351.5999755859375</ele>
+        <ele>1351</ele>
         <time>2014-02-20T08:43:02.000Z</time>
         <extensions>
           <gpxtpx:TrackPointExtension>
@@ -42,7 +42,7 @@
         </extensions>
       </trkpt>
       <trkpt lon="6.934554101899266" lat="46.03450287133455">
-        <ele>1351.5999755859375</ele>
+        <ele>1352</ele>
         <time>2014-02-20T08:43:05.000Z</time>
         <extensions>
           <gpxtpx:TrackPointExtension>
