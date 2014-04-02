@@ -29,6 +29,7 @@ class GPXFileTest < Test::Unit::TestCase
     assert_equal(46.03444067761302, gpx.tracks.first.segments.first.points[1].lat)
     assert_equal(46.03447579778731, gpx.tracks.first.segments.first.points[2].lat)
     assert_equal(46.03450287133455, gpx.tracks.first.segments.first.points[3].lat)
+    assert_equal(6, gpx.tracks.first.elapsed_time)
   end
 
 

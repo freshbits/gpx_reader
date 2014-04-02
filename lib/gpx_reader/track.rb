@@ -22,10 +22,11 @@
 #++
 module GPXReader
   class Track
-    attr_accessor :segments, :name, :desc, :distance
+    attr_accessor :segments, :name, :desc, :distance, :elapsed_time
 
     def initialize(trk)
       @distance = 0
+      @elapsed_time = 0
       @name = trk.at_css("name").text rescue ""
       @desc = trk.at_css("desc").text rescue ""
       @segments = []
@@ -33,6 +34,7 @@ module GPXReader
         seg = Segment.new(seg)
         @segments << seg
         @distance += seg.distance
+        @elapsed_time += seg.elapsed_time
       end
     end
 	end

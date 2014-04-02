@@ -22,10 +22,11 @@
 #++
 module GPXReader
   class Segment
-    attr_accessor :points, :distance
+    attr_accessor :points, :distance, :elapsed_time
 
     def initialize(segment)
       @distance = 0
+      @elapsed_time = 0
       @points = []
       previous_pt = nil
       segment.css("trkpt").each do |pt|
@@ -33,6 +34,8 @@ module GPXReader
         @points << point
         # calculate distance
         @distance += haversine_distance(previous_pt, point) unless previous_pt.nil?
+        # calculate elapsed tiem
+        @elapsed_time += (previous_pt.nil? ? 0  : (point.time - previous_pt.time))
         previous_pt = point
         # puts @points.size if @points.size.modulo(100).zero?
       end
